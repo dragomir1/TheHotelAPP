@@ -1,24 +1,24 @@
 export default `
     type Reservation {
+      _id: String!
       firstName: String!
       lastName: String!
       email: String!
-      id: ID!
     }
 
     type Query {
-      reservation(email: String!): Reservation
-      reservations: [Reservation]!
+      reservation(_id: ID!): Reservation!
+      reservations: [Reservation!]!
     }
 
     type Mutation {
-      addReservation
+      createReservation
             (
             firstName: String!,
             lastName: String!,
             email: String!
             ): Reservation!
-      editReservation
+      updateReservation
             (
             firstName: String!,
             lastName: String!,
@@ -26,7 +26,6 @@ export default `
             ): Reservation!
       deleteReservation
             (
-            id: ID!
             email: String!
             ): Reservation!
     }

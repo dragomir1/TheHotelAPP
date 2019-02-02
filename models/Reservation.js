@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const ReservationSchema = new Schema({
   firstName: {
@@ -12,6 +12,7 @@ const ReservationSchema = new Schema({
   },
   email: {
     type: String,
+    unique: true,
     required: true
   },
 });
